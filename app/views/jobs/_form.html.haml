@@ -1,8 +1,10 @@
 = simple_form_for(@job, html: { class: 'form-horizontal '}) do |f|
   = f.collection_select :category_id, Category.all, :id, :name, { prompt: "Choose a category" }
-  = f.input :title, label: "Job Title"
-  = f.input :description, label: "Job Description"
-  = f.input :company, label: "Your Company"
+  = f.input :title, label: "Job Title", placholder: "Mid-Level Rails Programmer, Junior Front End, ETC."
+  = f.text_area :description, label: "Job Description", placeholder: "Tell us about the job"
+  = f.text_area :about_company, label: "Tell us about your company", placeholder: "Tell us about your company"
+  = f.input :company, label: "Your Company", placeholder: "Name of your Company"
+  = f.input :salary, label: "Estimated Salary", placeholder: "Enter what you're willing to pay the right candidate"
   = f.input :url, label: "Link to Job"
   %br/
   = f.button :submit
