@@ -1,10 +1,10 @@
-= simple_form_for(@job, html: { class: 'form-horizontal '}) do |f|
-  = f.collection_select :category_id, Category.all, :id, :name, { prompt: "Choose a category" }
-  = f.input :title, label: "Job Title", placholder: "Mid-Level Rails Programmer, Junior Front End, ETC."
-  = f.text_area :description, label: "Job Description", placeholder: "Tell us about the job"
-  = f.text_area :about_company, label: "Tell us about your company", placeholder: "Tell us about your company"
-  = f.input :company, label: "Your Company", placeholder: "Name of your Company"
-  = f.input :salary, label: "Estimated Salary", placeholder: "Enter what you're willing to pay the right candidate"
-  = f.input :url, label: "Link to Job"
+= simple_form_for(@job, html: { class: 'form-horizontal' }) do |f|
+  = f.collection_select :category_id, Category.all, :id, :name, { prompt: "Choose a category" }, input_html: { class: "dropdown-toggle" }
+  = f.input :title, label: "Job Title", input_html: { class: "form-control" }
+  = f.input :description, label: "Job Description", placeholder: "Tell us about the job", input_html: { class: "form-control" }
+  = f.input :about_company, label: "Tell us about your company", placeholder: "Tell us about your company", input_html: { class: "form-control" }
+  = f.input :company, label: "Your Company", placeholder: "Name of your Company", input_html: { class: "form-control" }
+  = f.input :salary, label: "Estimated Salary", placeholder: "Enter what you're willing to pay the right candidate", input_html: { class: "form-control" }
+  = f.input :url, label: "Link to Job", input_html: { class: "form-control" }
   %br/
   = f.button :submit
